@@ -43,7 +43,7 @@ function isValidNodePath(nodePath, state) {
   if (state.types.isStringLiteral(nodePath)) return true;
 
   if (state.types.isBinaryExpression(nodePath)) {
-    return nodePath && nodePath.node && state.types.isStringLiteral(nodePath.node.left);
+    return state.types.isStringLiteral(nodePath.node.left);
   }
 
   if (state.types.isTemplateLiteral(nodePath)) {
